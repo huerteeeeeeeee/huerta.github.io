@@ -1,0 +1,93 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+body
+{
+    background-color: #161E31;
+    
+}
+.ingreso
+{
+    opacity: var(--opacity);
+    pointer-events: var(--pointer);
+    transition: opacity .5s;
+}
+.general
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+ 
+}
+
+.containeringreso
+{
+    align-items: center;
+    padding: 80px;
+    height: 60%;
+    margin-top: 80px;
+    margin-left: 20.8%;
+    width: 60%;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+.img-ingreso img
+{
+    height: 83.2%;
+    width: 75%;
+    margin-left: 0%;
+    margin-left: -5%;
+   margin-top:13px;
+  padding-left: 4rem;
+ object-position: center;  
+ padding-top: 67px;
+ top: 200px;
+
+
+
+}
+h1
+{
+    font-size: 35px;
+}
+h5
+{
+    font-size: 16px;
+}
+ input, nombre
+{
+  padding: 15px;
+  border-radius: 0.3rem;
+  width: 50%;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  color:var(--text-color);
+}
+.ingreso .boton
+{
+  display: inline-block;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 1rem 1rem;
+  border-radius: 0.3rem;
+  width: 50%;
+  
+}
+.ingreso:target
+{
+    --opacity:1;
+    --pointer:unset; 
+}
+.reg
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}

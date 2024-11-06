@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ingreso.css">
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <section class="ingreso">
+        <div class="general">
+            <div class="containeringreso">
+                <h1>Inicio de sesión</h1> 
+                <br><br>
+                <h5>Para iniciar sesión, ingresa los datos correspondientes</h5> 
+                <br><br>
+                <form action="ingreso.php" method="post">
+                    <input type="text" name="username" placeholder="Número de documento" required>
+                    <input type="password" name="password" placeholder="Clave" required>
+                    <br><br>
+                    <input type="submit" value="Entrar" class="boton">
+                </form>
+                <br><br>
+                <a href="registro.html" class="reg">¿Aún no tienes cuenta? Regístrate aquí</a>
+            </div>
+            <div class="img-ingreso">
+                <img src="./img/WhatsApp Image 2023-09-19 at 14.14.05.jpeg" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+</html>

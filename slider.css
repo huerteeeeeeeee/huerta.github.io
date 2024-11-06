@@ -1,0 +1,43 @@
+
+.slider-f
+{
+    width: 200px;
+    height: 200;
+    margin: 50px auto 0;
+    overflow: hidden;
+    
+
+}
+.slider-f ul
+{
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+.slider-f li
+{
+    list-style: none;
+    width: 100%;
+}
+.slider-f img{
+    width: 98%;
+    border-radius: 10px;
+
+}
+@keyframes slide {
+    0%{ margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{ margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{ margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{ margin-left: -300%;}
+    95%{margin-left: -300%;}
+
+    100%{ margin-left: -400%;}
+    120%{margin-left: -400%;}
+}

@@ -1,0 +1,27 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.boton
+{
+  display: inline-block;
+  margin-bottom: 100rem;
+  background:#6b6969;
+  color: rgb(255, 255, 255);
+  padding: 1rem 1rem;
+  border-radius: 0.6rem;
+  margin-left: 35rem;
+  text-decoration: none;
+}
+.boton:hover
+{
+  background: #72766e
+}

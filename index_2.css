@@ -1,0 +1,28 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section
+{
+    padding: 50px 10%;
+}
+header
+{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(120, 31%, 87%);
+    padding: 10px;
+    z-index: 1000;
+    border: 2px solid rgb(183, 211, 200);
+    border-radius: 2%;
+}
+.inicio
+{
+   background-image: url(../img/WhatsApp\ Image\ 2023-09-19\ at\ 14.14.46.jpeg);
+   
+}

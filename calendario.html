@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Eventos</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<h1>Agregar Evento</h1>
+<form method="POST" action="">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    
+    <label for="hora_inicio">Hora Inicio:</label>
+    <input type="time" id="hora_inicio" name="hora_inicio" required>
+    
+    <label for="hora_fin">Hora Fin:</label>
+    <input type="time" id="hora_fin" name="hora_fin" required>
+    
+    <label for="evento">Evento:</label>
+    <input type="text" id="evento" name="evento" required>
+    
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+    
+    <button type="submit">Agregar Evento</button>
+</form>
+
+<?php
+$servername = "localhost";
+$username = "root"; // Cambia esto si has configurado un usuario diferente
+$password = ""; // Si tienes una contraseña, colócala aquí
+$dbname = "calendario_db";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Comprobar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Insertar evento si se envía el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $hora_inicio = $_POST['hora_inicio'];
+    $hora_fin = $_POST['hora_fin'];
+    $evento = $_POST['evento'];
+    $fecha = $_POST['fecha'];
+
+    $sql = "INSERT INTO eventos (nombre, hora_inicio, hora_fin, evento, fecha) VALUES ('$nombre', '$hora_inicio', '$hora_fin', '$evento', '$fecha')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<p>Nuevo evento agregado exitosamente.</p>";
+    } else {
+        echo "<p>Error: " . $sql . "<br>" . $conn->error . "</p>";
+    }
+}
+
+// Mostrar eventos
+$sql = "SELECT * FROM eventos ORDER BY fecha, hora_inicio";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<h2>Eventos Agregados</h2>";
+    echo "<table><tr><th>ID</th><th>Nombre</th><th>Hora Inicio</th><th>Hora Fin</th><th>Evento</th><th>Fecha</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>{$row['id']}</td><td>{$row['nombre']}</td><td>{$row['hora_inicio']}</td><td>{$row['hora_fin']}</td><td>{$row['evento']}</td><td>{$row['fecha']}</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "<p>No hay eventos registrados.</p>";
+}
+
+$conn->close();
+?>
+
+</body>
+</html>
